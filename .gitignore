@@ -1,0 +1,119 @@
+# C/C++ source files
+
+# Сперва
+# Запрещаем вообще все
+*
+
+#find . -type d | cut -c 3- | grep -v '.git\|.cache\|node_modules' | sed 's/^/!*/'
+# Затем
+# Разрешаем мониторить эти папки
+!*script/
+
+
+# Эту папку не нужно отслеживать
+#!*storage/
+#!*storage/photos/
+#!*storage/photos/default/
+
+#!*storage/
+#!*storage/photos/
+#!*storage/photos/default/
+#!*storage/photos/default/avatar.png
+#!storage/photos/default/test.ini
+#public/img/avatar.png
+
+# И в этих папках брать только эти форматы
+!*.ini
+!.golangci.yml
+!.gitignore
+!.gitattributes
+!.gitmodules
+!go.mod
+!*.sh
+!*.go
+!*.gohtml
+!*.proto
+!*.js
+!*.css
+!*.mod
+!*.json
+!*.conf
+!*.toml
+!*.vue
+!*.js
+!*.scss
+!*.sql
+!*.eot
+!*.ttf
+!*.woff
+!*.woff2
+!*.map
+!*.yaml
+!*.html
+!*.yml
+!*Makefile
+!*Dockerfile
+# Использутей для этих типв файлов git lfs
+!*.png
+!README.md
+
+# Запрещаем конкретные файлы
+mix-manifest.json
+*.swf
+*.swg
+*.swh
+*.swi
+*.swj
+*.swk
+*.swl
+*.swm
+*.swn
+*.swo
+*.swp
+*.exe
+*.so
+*.lib
+*.db
+server.grpc
+*work/
+frontend/backend
+frontend/admin.element.db
+
+
+# Запретили все что в папке
+#storage/photos/default/*
+configs/*
+# Кроме этого
+# Но хранить в гите картинки категорически нельзя,
+# нужно использовать git lfs
+# https://git-lfs.github.com/
+#!storage/photos/default/test.ini
+#!storage/photos/default/avatar.png
+#!configs/*.example.ini
+!configs/*.example.toml
+!terminalgo.example.english.toml
+public/css/app.css
+public/js/app.js
+go.sum
+# Запрещаем папки
+#public
+
+#temp_dist_pack/
+#configs/terminalgo.toml
+#external_googletest
+build
+node_modules
+storage
+#public
+#./public/css/app.css
+#./public/js/app.js
+#./public/mix-manifest.json
+#./start
+#./start_arm
+#./start.exe
+#./start_terminal
+#start
+#!scripts/
+#./configs/terminalgo.toml
+#public/css/app.css
+#public/js/app.js
